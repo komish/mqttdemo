@@ -8,8 +8,8 @@ import (
 
 type Setting = func(*mqtt.ClientOptions)
 
-func TCPConnectionString(host, port string) string {
-	return fmt.Sprintf("tcp://%s:%s", host, port)
+func ConnectionString(proto, host, port string) string {
+	return fmt.Sprintf("%s://%s:%s", proto, host, port)
 }
 
 func New(
